@@ -187,9 +187,6 @@ void MyCGPathApplierFunc (void *info, const CGPathElement *element) {
     
     NSData *postData = [postStr dataUsingEncoding:NSUTF8StringEncoding];
     
-    
-    
-    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://43.228.39.217:10122"]];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:postData];

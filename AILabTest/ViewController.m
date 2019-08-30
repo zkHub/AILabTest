@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "DrawView.h"
 #import <YYKit.h>
-
+#import <MBProgressHUD.h>
 
 
 #define DRAW_SCALE 3
@@ -187,19 +187,27 @@ void MyCGPathApplierFunc (void *info, const CGPathElement *element) {
     
     NSData *postData = [postStr dataUsingEncoding:NSUTF8StringEncoding];
     
+    
+    
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://43.228.39.217:10122"]];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:postData];
     
+    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfig.timeoutIntervalForRequest = 10;
 
-    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
+    
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
         NSString *reStr = @"";
         if (!error) {
             reStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             
-        
         } else {
             reStr = error.description;
         }
@@ -213,11 +221,9 @@ void MyCGPathApplierFunc (void *info, const CGPathElement *element) {
             [self presentViewController:alert animated:YES completion:nil];
         }
         
-        
-        
     }];
     [task resume];
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
 }
 

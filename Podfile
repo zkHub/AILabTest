@@ -6,7 +6,7 @@ target 'AILabTest' do
   # use_frameworks!
 
 pod 'YYKit'
-
+pod 'MBProgressHUD'
   # Pods for AILabTest
 
 end

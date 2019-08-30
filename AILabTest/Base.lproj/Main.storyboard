@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,86 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ns3-VS-pZZ" customClass="DrawView">
+                                <rect key="frame" x="5" y="174" width="404" height="404"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ns3-VS-pZZ" secondAttribute="height" multiplier="1:1" id="Azx-9C-Xaf"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBi-S1-4Cg">
+                                <rect key="frame" x="180.5" y="608" width="53" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OqN-lH-4GU"/>
+                                </constraints>
+                                <state key="normal" title="clear"/>
+                                <connections>
+                                    <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bS4-7b-DNZ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dr1-df-UCm">
+                                <rect key="frame" x="100" y="84" width="214" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIv-Nq-lfG">
+                                <rect key="frame" x="72" y="608" width="53" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aEg-my-VRk"/>
+                                </constraints>
+                                <state key="normal" title="undo"/>
+                                <connections>
+                                    <action selector="undoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h5m-t5-Xgv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLf-m0-Z4r">
+                                <rect key="frame" x="289" y="608" width="53" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="confirm"/>
+                                <connections>
+                                    <action selector="confirmAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NJp-uh-s2X"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dr1-df-UCm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="9YO-gM-6PN"/>
+                            <constraint firstItem="Dr1-df-UCm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="9jI-Vk-6eg"/>
+                            <constraint firstItem="QBi-S1-4Cg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xIv-Nq-lfG" secondAttribute="trailing" constant="8" symbolic="YES" id="E1p-JF-tzL"/>
+                            <constraint firstItem="Ns3-VS-pZZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Mmo-q0-rq0"/>
+                            <constraint firstItem="Ns3-VS-pZZ" firstAttribute="top" secondItem="Dr1-df-UCm" secondAttribute="bottom" constant="60" id="P8d-mS-Or6"/>
+                            <constraint firstItem="xLf-m0-Z4r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QBi-S1-4Cg" secondAttribute="trailing" constant="8" symbolic="YES" id="SLd-ny-8uE"/>
+                            <constraint firstItem="Ns3-VS-pZZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-5" id="TNF-aQ-CZL"/>
+                            <constraint firstItem="xLf-m0-Z4r" firstAttribute="baseline" secondItem="xIv-Nq-lfG" secondAttribute="baseline" id="Ufz-PW-H5X"/>
+                            <constraint firstItem="QBi-S1-4Cg" firstAttribute="centerX" secondItem="Ns3-VS-pZZ" secondAttribute="centerX" id="Y26-qh-ILX"/>
+                            <constraint firstItem="QBi-S1-4Cg" firstAttribute="height" secondItem="xIv-Nq-lfG" secondAttribute="height" id="dVp-R6-NQe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dr1-df-UCm" secondAttribute="trailing" constant="100" id="fC9-dS-fZ4"/>
+                            <constraint firstItem="QBi-S1-4Cg" firstAttribute="width" secondItem="xIv-Nq-lfG" secondAttribute="width" id="gRQ-zY-yRp"/>
+                            <constraint firstItem="xIv-Nq-lfG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="nlK-PG-eyf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xLf-m0-Z4r" secondAttribute="trailing" constant="72" id="rUn-fR-GzT"/>
+                            <constraint firstItem="QBi-S1-4Cg" firstAttribute="top" secondItem="Ns3-VS-pZZ" secondAttribute="bottom" constant="30" id="sgK-kz-RkC"/>
+                            <constraint firstItem="xLf-m0-Z4r" firstAttribute="baseline" secondItem="QBi-S1-4Cg" secondAttribute="baseline" id="uHV-4i-TfY"/>
+                            <constraint firstItem="xLf-m0-Z4r" firstAttribute="width" secondItem="QBi-S1-4Cg" secondAttribute="width" id="veA-CU-eix"/>
+                            <constraint firstItem="xLf-m0-Z4r" firstAttribute="height" secondItem="QBi-S1-4Cg" secondAttribute="height" id="xeJ-YX-7w0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="numText" destination="Dr1-df-UCm" id="ArN-MX-4tR"/>
+                        <outlet property="printView" destination="Ns3-VS-pZZ" id="ceN-FU-Xum"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
 </document>

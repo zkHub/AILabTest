@@ -13,9 +13,13 @@
 		58485E8D231628EF0066286B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58485E8C231628EF0066286B /* Assets.xcassets */; };
 		58485E90231628EF0066286B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58485E8E231628EF0066286B /* LaunchScreen.storyboard */; };
 		58485E93231628EF0066286B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58485E92231628EF0066286B /* main.m */; };
+		58485E9B231632580066286B /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58485E99231632580066286B /* DrawView.m */; };
+		FC48C118899410428E3ABEB4 /* libPods-AILabTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28494F363D5C8654E722666A /* libPods-AILabTest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18AF0BF79448CDAD8CA9FA0B /* Pods-AILabTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AILabTest.debug.xcconfig"; path = "Target Support Files/Pods-AILabTest/Pods-AILabTest.debug.xcconfig"; sourceTree = "<group>"; };
+		28494F363D5C8654E722666A /* libPods-AILabTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AILabTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58485E80231628ED0066286B /* AILabTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AILabTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58485E83231628ED0066286B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58485E84231628ED0066286B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +30,9 @@
 		58485E8F231628EF0066286B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58485E91231628EF0066286B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58485E92231628EF0066286B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58485E99231632580066286B /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		58485E9A231632580066286B /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		A41518C479765F39C37F60FF /* Pods-AILabTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AILabTest.release.xcconfig"; path = "Target Support Files/Pods-AILabTest/Pods-AILabTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +40,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC48C118899410428E3ABEB4 /* libPods-AILabTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21BB323D8C2ACBB591FE989C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28494F363D5C8654E722666A /* libPods-AILabTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		58485E77231628ED0066286B = {
 			isa = PBXGroup;
 			children = (
 				58485E82231628ED0066286B /* AILabTest */,
 				58485E81231628ED0066286B /* Products */,
+				A419C1625BD626C6153724FB /* Pods */,
+				21BB323D8C2ACBB591FE989C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +76,8 @@
 		58485E82231628ED0066286B /* AILabTest */ = {
 			isa = PBXGroup;
 			children = (
+				58485E9A231632580066286B /* DrawView.h */,
+				58485E99231632580066286B /* DrawView.m */,
 				58485E83231628ED0066286B /* AppDelegate.h */,
 				58485E84231628ED0066286B /* AppDelegate.m */,
 				58485E86231628ED0066286B /* ViewController.h */,
@@ -71,6 +91,15 @@
 			path = AILabTest;
 			sourceTree = "<group>";
 		};
+		A419C1625BD626C6153724FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18AF0BF79448CDAD8CA9FA0B /* Pods-AILabTest.debug.xcconfig */,
+				A41518C479765F39C37F60FF /* Pods-AILabTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +107,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58485E96231628EF0066286B /* Build configuration list for PBXNativeTarget "AILabTest" */;
 			buildPhases = (
+				06273941044A889BF518D2CE /* [CP] Check Pods Manifest.lock */,
 				58485E7C231628ED0066286B /* Sources */,
 				58485E7D231628ED0066286B /* Frameworks */,
 				58485E7E231628ED0066286B /* Resources */,
@@ -136,6 +166,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06273941044A889BF518D2CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AILabTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58485E7C231628ED0066286B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,6 +198,7 @@
 			files = (
 				58485E88231628ED0066286B /* ViewController.m in Sources */,
 				58485E93231628EF0066286B /* main.m in Sources */,
+				58485E9B231632580066286B /* DrawView.m in Sources */,
 				58485E85231628ED0066286B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,11 +339,13 @@
 		};
 		58485E97231628EF0066286B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18AF0BF79448CDAD8CA9FA0B /* Pods-AILabTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FM6CWNE4AZ;
 				INFOPLIST_FILE = AILabTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +358,13 @@
 		};
 		58485E98231628EF0066286B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A41518C479765F39C37F60FF /* Pods-AILabTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FM6CWNE4AZ;
 				INFOPLIST_FILE = AILabTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
